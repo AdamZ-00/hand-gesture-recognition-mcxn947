@@ -72,4 +72,4 @@ source/
 
 ## Build
 
-Projet MCUXpresso IDE. Importer via `File > Open Projects from File System`, sélectionner le dossier du projet, puis `Build` (Ctrl+B). Flasher via LinkServer Debug.
+Projet MCUXpresso IDE. Importer via `File > Open Projects from File System`, sélectionner le dossier du projet, puis `Build`.
