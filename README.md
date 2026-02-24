@@ -73,7 +73,3 @@ source/
 ## Build
 
 Projet MCUXpresso IDE. Importer via `File > Open Projects from File System`, sélectionner le dossier du projet, puis `Build` (Ctrl+B). Flasher via LinkServer Debug.
-
-## Licence
-
-BSD-3-Clause (NXP) / Apache 2.0 (TensorFlow)
