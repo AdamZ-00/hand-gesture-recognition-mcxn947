@@ -1,3 +1,12 @@
+/**
+ * @file    model.cpp
+ * @brief   Gestion du modèle TensorFlow Lite Micro.
+ *
+ * Charge le modèle TFLite (compilé pour le NPU Neutron), alloue l'arène de tenseurs
+ * (320 Ko) et expose les fonctions d'inférence et d'accès aux tenseurs d'entrée/sortie.
+ * La conversion des données d'entrée (uint8 → int8/float) est également gérée ici.
+ */
+
 /* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
    Copyright 2021-2023 NXP
 
@@ -24,14 +33,16 @@ limitations under the License.
 
 #include "fsl_debug_console.h"
 #include "model.h"
-#include "model_data.h"
+//#include "model_data.h"
+#include "tflite_learn_33_converted.h"
+
 
 static const tflite::Model* s_model = nullptr;
 static tflite::MicroInterpreter* s_interpreter = nullptr;
 
 extern tflite::MicroOpResolver &MODEL_GetOpsResolver();
 extern uint8_t npu_model_data[];
-constexpr int kTensorArenaSize = (256) * 1024;
+constexpr int kTensorArenaSize = (320) * 1024;
 
 // An area of memory to use for input, output, and intermediate arrays.
 // (Can be adjusted based on the model needs.)

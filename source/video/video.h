@@ -1,3 +1,12 @@
+/**
+ * @file    video.h
+ * @brief   Constantes du pipeline vidéo et prototypes des fonctions d'affichage.
+ *
+ * Définit les dimensions caméra (384×384), la hauteur des slices DMA (24 lignes),
+ * les dimensions du buffer LCD (192×12) et les fonctions d'initialisation
+ * du coprocesseur EZH (SmartDMA) et de l'écran LCD ST7796.
+ */
+
 /*
  * Copyright 2020-2022 NXP
  * All rights reserved.

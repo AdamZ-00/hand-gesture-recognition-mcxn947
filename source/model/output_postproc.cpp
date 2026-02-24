@@ -1,3 +1,13 @@
+/**
+ * @file    output_postproc.cpp
+ * @brief   Post-traitement de la sortie du modèle d'inférence.
+ *
+ * Extrait le label le plus probable (top-1) de la sortie du réseau de neurones.
+ * Si la confiance dépasse le seuil défini (DETECTION_TRESHOLD), le geste correspondant
+ * est envoyé aux servomoteurs via effectuer_geste(). Le résultat est aussi affiché
+ * sur la console série (label, score, temps d'inférence).
+ */
+
 /*
  * Copyright 2020-2022 NXP
  * All rights reserved.
@@ -10,6 +20,8 @@
 #include "get_top_n.h"
 #include "demo_config.h"
 #include "labels.h"
+#include "frdm_mcxn947.h"
+
 #ifdef EIQ_GUI_PRINTF
 #include "chgui.h"
 #endif
@@ -37,8 +49,13 @@ status_t MODEL_ProcessOutput(const uint8_t* data, const tensor_dims_t* dims,
 	            label = labels[index];
 	            g_label_num = index;
 	            g_detedted_flag = 1;
+	            effectuer_geste(g_label_num);
 	        }
+
 	    }
+	     else {
+	    	 effectuer_geste(6);
+	     }
 
 	    int score = (int)(confidence * 100);
 	#if 0

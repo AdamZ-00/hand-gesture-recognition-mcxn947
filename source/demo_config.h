@@ -1,3 +1,12 @@
+/**
+ * @file    demo_config.h
+ * @brief   Paramètres de configuration de la démo d'inférence.
+ *
+ * Définit le nom de l'exemple, le framework utilisé (TFLite Micro),
+ * le seuil de détection (60 %), le nombre de résultats top-N,
+ * et le mode verbeux pour le debug console.
+ */
+
 /*
  * Copyright 2021 NXP
  * All rights reserved.

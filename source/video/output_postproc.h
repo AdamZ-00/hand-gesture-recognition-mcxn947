@@ -1,3 +1,11 @@
+/**
+ * @file    output_postproc.h
+ * @brief   Interface du post-traitement de la sortie d'inférence.
+ *
+ * Déclare MODEL_ProcessOutput() qui interprète le tenseur de sortie du modèle,
+ * identifie le geste reconnu et déclenche la commande des servomoteurs.
+ */
+
 /*
  * Copyright 2020 NXP
  * All rights reserved.

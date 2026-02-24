@@ -1,3 +1,13 @@
+/**
+ * @file    EZH_Camera.c
+ * @brief   Acquisition caméra via le coprocesseur SmartDMA (EZH).
+ *
+ * Configure le SmartDMA pour capturer les trames de l'OV7670 en 384×384 RGB565,
+ * découpées en slices de 24 lignes avec double buffering (ping-pong).
+ * À chaque slice reçue, une interruption (PLU_IRQn) déclenche la copie vers
+ * le buffer d'entrée du modèle et l'affichage sur le LCD.
+ */
+
 /*
  * Copyright (c) 2013 - 2015, Freescale Semiconductor, Inc.
  * Copyright 2016-2017 NXP

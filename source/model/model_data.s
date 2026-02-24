@@ -10,7 +10,7 @@
  *
  * o Redistributions in binary form must reproduce the above copyright notice, this
  *   list of conditions and the following disclaimer in the documentation and/or
- *   other materials provided with the distribution.
+ *   other materials provided	 with the distribution.
  *
  * o Neither the name of Freescale Semiconductor, Inc. nor the names of its
  *   contributors may be used to endorse or promote products derived from this
@@ -40,7 +40,7 @@
 
 
 npu_model_data:
-	.incbin "../source/model/mobilenet_v1_0.25-cifar10_128_128_converted.tflite"
+	.incbin "../source/model/tflite_learn_33_converted.tflite"
 npu_model_data_end:
 
 od_image_data:

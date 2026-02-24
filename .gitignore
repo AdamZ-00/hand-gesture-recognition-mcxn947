@@ -1,15 +1,39 @@
+# Build artifacts
 /Debug/
 /Release/
-.vscode/
-keil/Debug
-keil/release
-keil/Listings
-Framework/
+
+# IDE / Eclipse / MCUXpresso
+.settings/
+.metadata/
+*.launch
+.cproject
+.project
+
+# Keil
+keil/Debug/
+keil/release/
+keil/Listings/
 keil/DebugAEAI/
 keil/*Debug*
 keil/time_series_*
-*Debug.launch
 keil/*.uvguix*
 keil/*.uvoptx
+
+# VS Code
+.vscode/
+
+# Fichiers générés / inutiles
 *.xls
 *.html
+*.log
+*.o
+*.d
+*.map
+*.axf
+*.elf
+*.bin
+*.hex
+*.lst
+
+# Fichiers volumineux à ne pas versionner
+architecture_projet.txt

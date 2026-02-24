@@ -1,3 +1,13 @@
+/**
+ * @file    cifar10_recognize.cpp
+ * @brief   Boucle principale d'acquisition caméra et d'inférence.
+ *
+ * Contient la conversion des trames caméra RGB565 vers le format d'entrée du modèle
+ * (96×96 RGB888, centré et sous-échantillonné) et la boucle d'inférence temps réel.
+ * Le coprocesseur EZH envoie les slices d'image via ezh_copy_slice_to_model_input(),
+ * puis cifar10_recognize() exécute l'inférence TFLite en continu.
+ */
+
  /*
  * Copyright 2020-2022 NXP
  * All rights reserved.
@@ -15,12 +25,15 @@
 #include "output_postproc.h"
 #include "timer.h"
 #include "video.h"
+#include "frdm_mcxn947.h"
+#include "debug_image.h"
 
 extern "C" {
 
-#define MODEL_IN_W	128
-#define MODEL_IN_H  128
-#define MODEL_IN_C	3
+constexpr int MODEL_IN_W = 96;
+constexpr int MODEL_IN_H = 96;
+constexpr int MODEL_IN_C = 3;
+
 #define MODEL_IN_COLOR_BGR 0
 
 
@@ -28,8 +41,8 @@ __attribute__((section (".model_input_buffer"))) static uint8_t model_input_buf[
 
 uint32_t s_infUs = 0;
 volatile uint8_t g_isImgBufReady = 0;
-#define WND_X0 4
-#define WND_Y0 4
+#define WND_X0 0
+#define WND_Y0 0
 
 void Rgb565StridedToBgr888(const uint16_t* pIn, int srcW, int wndW, int wndH, int wndX0, int wndY0,
 	uint8_t* p888, int stride, uint8_t isSub128) {
@@ -155,6 +168,10 @@ void ezh_copy_slice_to_model_input(uint32_t idx, uint32_t cam_slice_buffer, uint
 			Rgb565StridedToRgb888((uint16_t*)cam_slice_buffer, cam_slice_width, cam_slice_width, cam_slice_height, WND_X0, wndY, pCurDat, s_imgStride, 1);
 		}
 	}
+	if (idx + 1 >= max_idx) {
+	    g_isImgBufReady = 1;
+	    DebugImage::reset(); // pour renvoyer une image à la prochaine itération
+	}
 }
 
 
@@ -186,10 +203,13 @@ void cifar10_recognize()
 		if (g_isImgBufReady == 0)
 			continue;
 
+		// envoyer l'image sur UART
+		//DebugImage::maybeSendImageOnce(model_input_buf, MODEL_IN_W * MODEL_IN_H * MODEL_IN_C);
+
 		uint8_t *buf = 0;
 
 		memset(inputData,0,inputDims.data[1]*inputDims.data[2]*inputDims.data[3]);
-		buf = inputData + (inputData,inputDims.data[1] - MODEL_IN_H) /2 * MODEL_IN_W * MODEL_IN_C;
+		buf = (inputData + (inputData,inputDims.data[1] - MODEL_IN_H) /2 * MODEL_IN_W * MODEL_IN_C);
 		memcpy(buf, model_input_buf, MODEL_IN_W*MODEL_IN_H*MODEL_IN_C);
 
 		auto startTime = TIMER_GetTimeInUS();
@@ -200,6 +220,7 @@ void cifar10_recognize()
 		s_infUs = (uint32_t)dt;
 
 		MODEL_ProcessOutput(outputData, &outputDims, outputType, dt);
+
 
 
 	}

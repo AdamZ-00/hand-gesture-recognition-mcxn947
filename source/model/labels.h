@@ -1,3 +1,12 @@
+/**
+ * @file    labels.h
+ * @brief   Labels de classification des gestes de la main.
+ *
+ * Définit les noms des classes reconnues par le modèle CIFAR-10 retrainé.
+ * L'ordre des labels doit correspondre aux indices de sortie du modèle.
+ * Classes : Cinq, Deux, Quatre, Trois, Un, Zero.
+ */
+
 /*
  * Copyright 2018 NXP
  * All rights reserved.
@@ -9,17 +18,8 @@
 #define _LABELS_H_
 
 static const char* labels[] = {
-    "airplane",
-    "automobile",
-    "bird",
-    "cat",
-    "deer",
-    "dog",
-    "frog",
-    "horse",
-    "ship",
-    "truck",
-    "          "
+		"Cinq", "Deux", "Quatre", "Trois", "Un", "Zero"
+				"          "
 };
 
 #endif // _LABELS_H_

@@ -1,3 +1,12 @@
+/**
+ * @file    display.c
+ * @brief   Pilotage de l'écran LCD ST7796 et affichage du flux caméra.
+ *
+ * Initialise l'écran LCD via FlexIO, affiche le flux vidéo de la caméra
+ * (384×384 sous-échantillonné en 192×192 par slices), et superpose le label
+ * détecté en bas de l'écran. Inclut un rendu de texte bitmap (police Consolas 24×12).
+ */
+
 /*
  * Copyright (c) 2013 - 2015, Freescale Semiconductor, Inc.
  * Copyright 2016-2017 NXP

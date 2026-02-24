@@ -1,3 +1,12 @@
+/**
+ * @file    get_top_n.cpp
+ * @brief   Extraction des N meilleurs résultats de classification.
+ *
+ * Parcourt le tenseur de sortie du modèle et retourne les N indices ayant
+ * la plus haute confiance au-dessus d'un seuil donné, triés par score décroissant.
+ * Supporte les formats FLOAT32, UINT8 et INT8.
+ */
+
 /* Copyright 2017 The TensorFlow Authors. All Rights Reserved.
    Copyright 2020 NXP
 

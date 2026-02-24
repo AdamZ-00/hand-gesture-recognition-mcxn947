@@ -294,7 +294,7 @@
 								<option id="com.crt.advproject.link.cpp.lto.optmization.level.2064496939" name="Link-time optimization level" superClass="com.crt.advproject.link.cpp.lto.optmization.level"/>
 								<option id="com.crt.advproject.link.cpp.fpu.1727990446" name="Floating point" superClass="com.crt.advproject.link.cpp.fpu" value="com.crt.advproject.link.cpp.fpu.fpv5sp.hard" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.cpp.manage.295346806" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.cpp.script.1403948813" name="Linker script" superClass="com.crt.advproject.link.cpp.script" value="frdmmcxn947_cifar10_label_camera_image_Debug.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.cpp.script.1403948813" name="Linker script" superClass="com.crt.advproject.link.cpp.script" value="dm-label-cifar10-images-on-mcxn947_Debug.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.scriptdir.727189521" name="Script path" superClass="com.crt.advproject.link.cpp.scriptdir" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.crpenable.636195853" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.cpp.crpenable"/>
 								<option id="com.crt.advproject.link.cpp.flashconfigenable.1459104806" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.cpp.flashconfigenable" value="true" valueType="boolean"/>
@@ -692,7 +692,7 @@
 								<option id="com.crt.advproject.link.cpp.lto.optmization.level.1462751583" name="Link-time optimization level" superClass="com.crt.advproject.link.cpp.lto.optmization.level"/>
 								<option id="com.crt.advproject.link.cpp.fpu.574203276" name="Floating point" superClass="com.crt.advproject.link.cpp.fpu" value="com.crt.advproject.link.cpp.fpu.fpv5sp.hard" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.cpp.manage.1308909299" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.cpp.script.1578017506" name="Linker script" superClass="com.crt.advproject.link.cpp.script" value="frdmmcxn947_cifar10_label_camera_image_Release.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.cpp.script.1578017506" name="Linker script" superClass="com.crt.advproject.link.cpp.script" value="dm-label-cifar10-images-on-mcxn947_Release.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.scriptdir.525647458" name="Script path" superClass="com.crt.advproject.link.cpp.scriptdir" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.crpenable.1303538084" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.cpp.crpenable"/>
 								<option id="com.crt.advproject.link.cpp.flashconfigenable.103577416" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.cpp.flashconfigenable" value="true" valueType="boolean"/>
@@ -828,7 +828,7 @@
 	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
 		<sdkName>SDK_2.x_FRDM-MCXN947</sdkName>
 		<sdkExample>frdmmcxn947_tflm_cifar10</sdkExample>
-		<sdkVersion>2.16.100</sdkVersion>
+		<sdkVersion>25.03.00</sdkVersion>
 		<sdkComponents>utility.debug_console_lite.MCXN947;platform.utilities.assert_lite.MCXN947;middleware.eiq.tensorflow_lite_micro.binary.MCXN947;component.lists.MCXN947;component.lpuart_adapter.MCXN947;platform.drivers.lpflexcomm_lpuart.MCXN947;platform.devices.MCXN947_CMSIS.MCXN947;platform.devices.MCXN947_startup.MCXN947;platform.drivers.port.MCXN947;platform.drivers.clock.MCXN947;platform.drivers.common.MCXN947;platform.drivers.gpio.MCXN947;middleware.eiq.tensorflow_lite_micro.neutron.MCXN947;platform.drivers.reset.MCXN947;platform.utilities.misc_utilities.MCXN947;middleware.eiq.tensorflow_lite_micro.headers.MCXN947;middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.MCXN947;middleware.eiq.tensorflow_lite_micro.third_party.gemmlowp.MCXN947;middleware.eiq.tensorflow_lite_micro.third_party.ruy.MCXN947;platform.drivers.lpflexcomm.MCXN947;CMSIS_Include_core_cm.MCXN947;platform.devices.MCXN947_system.MCXN947;platform.drivers.mcx_spc.MCXN947;middleware.eiq.tensorflow_lite_micro.third_party.neutron_lib.binary.MCXN947;frdmmcxn947_tflm_cifar10;</sdkComponents>
 		<boardId>frdmmcxn947</boardId>
 		<package>MCXN947VDF</package>

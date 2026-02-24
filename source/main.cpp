@@ -1,3 +1,12 @@
+/**
+ * @file    main.cpp
+ * @brief   Point d'entrée du système de reconnaissance de gestes.
+ *
+ * Initialise les périphériques (horloge, caméra OV7670, écran LCD, servomoteurs)
+ * puis lance la boucle d'inférence CIFAR-10 qui pilote la main robotique.
+ * Le pipeline complet : capture caméra → prétraitement → inférence TFLite/NPU → actionnement servos.
+ */
+
 /*
  * Copyright 2020-2022 NXP
  * All rights reserved.
@@ -16,6 +25,10 @@
 #include "timer.h"
 #include "video.h"
 #include "ov7670.h"
+#include "frdm_mcxn947.h"
+#include "uart_utils.h"
+
+
 
 int main(void)
 {
@@ -31,6 +44,8 @@ int main(void)
     display_init();
 
     ezh_start();
+
+    servos_init();
 
     cifar10_recognize();
 

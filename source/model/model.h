@@ -1,3 +1,12 @@
+/**
+ * @file    model.h
+ * @brief   Interface d'abstraction du modèle TFLite Micro.
+ *
+ * Déclare les types (tensor_dims_t, tensor_type_t) et les fonctions permettant
+ * d'initialiser le modèle, d'accéder aux tenseurs d'entrée/sortie, de lancer
+ * l'inférence et de récupérer les métadonnées (nom du modèle, occupation mémoire).
+ */
+
 /*
  * Copyright 2020 NXP
  * All rights reserved.
